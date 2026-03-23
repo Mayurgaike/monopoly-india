@@ -54,7 +54,7 @@ export function registerSocketHandlers(io: GameServer, roomManager: RoomManager)
     socket.on('room:select-color', (data) => {
       const room = findRoomForSocket(socket.id, roomManager);
       if (!room) return;
-      const player = room.players.find(p => p.socketId === socket.id);
+      const player = room.players.find((p: any) => p.socketId === socket.id);
       if (!player) return;
       // Don't allow changes once game started
       if (room.gameState?.phase === 'PLAYING') return;
@@ -79,7 +79,7 @@ export function registerSocketHandlers(io: GameServer, roomManager: RoomManager)
       const room = findRoomForSocket(socket.id, roomManager);
       if (!room) return;
 
-      const player = room.players.find(p => p.socketId === socket.id);
+      const player = room.players.find((p: any) => p.socketId === socket.id);
       if (!player) return;
 
       const result = roomManager.startGame(room.id, player.id, {
@@ -280,7 +280,7 @@ export function registerSocketHandlers(io: GameServer, roomManager: RoomManager)
     socket.on('chat:message', (data) => {
       const room = findRoomForSocket(socket.id, roomManager);
       if (!room) return;
-      const player = room.players.find(p => p.socketId === socket.id);
+      const player = room.players.find((p: any) => p.socketId === socket.id);
       if (!player) return;
 
       io.to(room.id).emit('chat:message', {

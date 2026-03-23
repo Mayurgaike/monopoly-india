@@ -1,0 +1,3 @@
+src/socket/handlers.ts(57,40): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/socket/handlers.ts(82,40): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/socket/handlers.ts(283,40): error TS7006: Parameter 'p' implicitly has an 'any' type.
